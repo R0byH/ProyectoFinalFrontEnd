@@ -14,25 +14,25 @@ interface TableComponentProps {
 
 export const TableComponent: React.FC<TableComponentProps> = ({ products, onView, onEdit, onDelete }) => {
   return (
-    <Table>
+    <Table data-testid="productsTable">
       <TableHead>
         <TableRow>
-          <TableCell sx={{ fontSize: '1.25rem', color: '#006a65'}}>Nombre</TableCell>
-          <TableCell sx={{ fontSize: '1.25rem', color: '#006a65'}}>Descripción</TableCell>
-          <TableCell sx={{ fontSize: '1.25rem', color: '#006a65'}}>Precio</TableCell>
-          <TableCell  sx={{ fontSize: '1.25rem', color: '#006a65'}} align="center">Acciones</TableCell>
+          <TableCell data-testid="headerName" sx={{ fontSize: '1.25rem', color: '#006a65'}}>Nombre</TableCell>
+          <TableCell data-testid="headerDescription" sx={{ fontSize: '1.25rem', color: '#006a65'}}>Descripción</TableCell>
+          <TableCell data-testid="headerPrice" sx={{ fontSize: '1.25rem', color: '#006a65'}}>Precio</TableCell>
+          <TableCell data-testid="headerActions" sx={{ fontSize: '1.25rem', color: '#006a65'}} align="center">Acciones</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
         {products.map((product) => (
-          <TableRow key={product.id}>
+          <TableRow key={product.id} data-testid={`productRow-${product.id}`}>
             <TableCell>{product.name}</TableCell>
             <TableCell>{product.description}</TableCell>
             <TableCell>{product.price}</TableCell>
             <TableCell align="center">
               <Button sx={{color: '#09006a'}} onClick={() => onView(product.id.toString())}><VisibilityIcon />Ver Detalle</Button> 
-              <Button onClick={() => onEdit(product.id.toString())}><EditIcon />Editar</Button> 
-              <Button sx={{color: '#6a0000'}} onClick={() => onDelete(product.id)}><DeleteIcon />Eliminar</Button> 
+              <Button onClick={() => onEdit(product.id.toString())} data-testid={`editButton-${product.id}`}><EditIcon />Editar</Button> 
+              <Button sx={{color: '#6a0000'}} onClick={() => onDelete(product.id)} data-testid={`deleteButton-${product.id}`}><DeleteIcon />Eliminar</Button> 
             </TableCell>
           </TableRow>
         ))}

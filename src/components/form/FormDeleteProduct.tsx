@@ -77,23 +77,23 @@ export const ConfirmDeleteModal: React.FC<ConfirmDeleteModalProps> = ({ open, on
 
 
   return (
-    <Dialog open={open} onClose={onClose}>
+    <Dialog open={open} onClose={onClose} data-testid="confirmDeleteModal">
       <DialogTitle sx={{ bgcolor:'#f0eeee'}} textAlign="center" color={'#6a0000'}>Eliminar Producto</DialogTitle>
       <DialogContent sx={{ bgcolor:'#f0eeee'}}>
         <Box>
           <Typography variant="h6">Nombre:</Typography>
-          <Typography>{name}</Typography>
+          <Typography data-testid="productName">{name}</Typography>
           <Typography variant="h6">Descripción:</Typography>
-          <Typography>{description}</Typography>
+          <Typography data-testid="productDescription">{description}</Typography>
           <br />
           <Typography variant="h5" color={'#e74c3c'}>¿Está seguro que desea eliminar el registro?</Typography>
         </Box>
       </DialogContent>
       <DialogActions sx={{ bgcolor:'#f0eeee', textAlign:'center'}}>
-        <Button onClick={onClose} color="primary">
+        <Button onClick={onClose} color="primary" data-testid="cancelDeleteButton">
           Cancelar
         </Button>
-        <Button onClick={handleDelete} color="primary">
+        <Button onClick={handleDelete} color="primary" data-testid="confirmDeleteButton">
           Eliminar
         </Button>
       </DialogActions>

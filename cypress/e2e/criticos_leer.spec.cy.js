@@ -5,7 +5,7 @@ describe('Verificar Información del Producto', () => {
         cy.get('#usuario').type('user1@example.com');
         cy.get('#contrasena').type('password123');
         cy.get('[data-testid="acceder"]').click();
-        cy.contains('Página de Administrador').should('be.visible');
+        cy.contains('Administración').should('be.visible');
     });
     it('Debería mostrar una tabla con una lista de productos', () => {
         // Visitar la página de productos

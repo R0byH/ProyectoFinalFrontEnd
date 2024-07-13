@@ -125,7 +125,7 @@ const AdminHomePage = () => {
             Bienvenido, aquí puedes gestionar los productos.
           </Typography>
           <Box mt={2} textAlign="end">
-            <Button onClick={() => handleOpenModal(undefined)} variant="contained" color="primary">
+            <Button onClick={() => handleOpenModal(undefined)} variant="contained" color="primary" data-testid="nuevoProducto">
               <AddIcon></AddIcon> Registrar Nuevo
             </Button>
           </Box>

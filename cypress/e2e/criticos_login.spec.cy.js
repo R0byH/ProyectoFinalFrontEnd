@@ -4,7 +4,7 @@ describe('Ingresar al Sistema', () => {
       cy.get('#usuario').type('user1@example.com');
       cy.get('#contrasena').type('password123');
       cy.get('[data-testid="acceder"]').click();
-      cy.contains('Página de Administrador').should('be.visible');
+      cy.contains('Administración').should('be.visible');
     });
   });
   

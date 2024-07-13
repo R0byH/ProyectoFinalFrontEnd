@@ -5,7 +5,7 @@ describe('Verificar la funcionalidad de eliminar un producto', () => {
       cy.get('#usuario').type('user1@example.com');
       cy.get('#contrasena').type('password123');
       cy.get('[data-testid="acceder"]').click();
-      cy.contains('Página de Administrador').should('be.visible');
+      cy.contains('Administración').should('be.visible');
     });
   
     it('Debería permitir eliminar un producto', () => {
