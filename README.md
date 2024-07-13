@@ -40,4 +40,21 @@ yarn dev
 ```
 ## Uso de al app
 
-una vez ejecutado el FrontEnd, ingresar a:  http://localhost:8080/  listio en el que verá la página de inicio con el listado de los productos, en la parte superiro derecha, se encuentra la opción ingresar la cual direcciona al Login para acceder a la administración de los productos
+una vez ejecutado el FrontEnd, ingresar a:  http://localhost:8080/  sitio en el que verá la página de inicio con el listado de los productos, en la parte superior derecha, se encuentra la opción ingresar la cual direcciona al Login para acceder a la administración de los productos
+
+### Para la ejecución de Pruebas
+``` bash
+npx cypress open
+## Los test contienen todas las credenciales necesarias
+```
+## El listado de flujos para test el siguiente:
+
+- Flujos criticos login
+- Flujos criticos leer
+- Flujos criticos crear
+- Flujos criticos modificar
+- Flujos criticos eliminar
+
+- Flujos alterno boton editar
+- Flujos alterno boton eliminar
+- Flujos alterno logout
